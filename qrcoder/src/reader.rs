@@ -12,10 +12,6 @@ pub fn grab_screen() -> (Vec<Vec<u8>>, Vec<Screen>) {
     let mut buffers: Vec<Vec<u8>> = Vec::new();
   
     for screen in screens.iter() {
-        
-        // Print screen debug info
-        // println!("capturer {:?}", screen);
-        
         // Capture image
         let image: Image = screen.capture().unwrap();
         let buffer: Vec<u8> = image.buffer().to_owned();
